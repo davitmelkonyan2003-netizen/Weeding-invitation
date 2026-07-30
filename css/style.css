@@ -258,19 +258,55 @@ a { text-decoration: none; color: inherit; }
 }
 .rsvp-radio label { display: flex; align-items: center; gap: .5rem; }
 
-/* GIFT */
-.gift { padding: 3rem 1.5rem; text-align: center; background: #fff; }
-.gift-text {
-  max-width: 560px;
-  margin: 0 auto 1rem;
+/* GALLERY */
+.gallery { padding: 4rem 1.5rem; background: #fff; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: .8rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.gallery-grid figure {
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--cream-dark);
+}
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gallery-note {
+  text-align: center;
   color: var(--ink-soft);
-  line-height: 1.8;
+  margin-top: 1.5rem;
+  font-size: .9rem;
 }
-.gift-account {
-  font-weight: 600;
-  letter-spacing: .05em;
+
+/* MUSIC BUTTON */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 50;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: #fff;
   color: var(--gold-dark);
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  transition: transform .2s ease;
 }
+.music-btn:hover { transform: scale(1.08); }
+.music-btn.playing { animation: spin 6s linear infinite; }
+@keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 
 /* FOOTER */
 .footer {
@@ -283,8 +319,7 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: .5rem;
 }
 .footer-names .amp { color: var(--gold); font-style: italic; }
-.footer-contact { color: var(--ink-soft); margin-bottom: .8rem; }
-.footer-thanks { color: var(--gold-dark); font-weight: 500; }
+.footer-thanks { color: var(--gold-dark); font-weight: 500; line-height: 1.8; }
 
 /* reveal on scroll */
 .reveal {

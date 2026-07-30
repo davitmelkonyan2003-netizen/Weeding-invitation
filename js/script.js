@@ -1,5 +1,5 @@
 // ---- Wedding date (year, monthIndex 0-based, day, hour, minute) ----
-const WEDDING_DATE = new Date(2026, 9, 17, 17, 0, 0); // 17 Հոկտեմբերի, 2026, 17:00
+const WEDDING_DATE = new Date(2026, 7, 22, 15, 30, 0); // 22 Օգոստոսի, 2026, 15:30 (պսակադրություն)
 
 // ---- Countdown ----
 function updateCountdown() {
@@ -66,5 +66,39 @@ if (rsvpForm) {
     );
 
     window.location.href = `mailto:${RSVP_EMAIL}?subject=${subject}&body=${body}`;
+  });
+}
+
+// ---- Gallery: auto-loads assets/gallery/1.jpg, 2.jpg, ... and skips missing ones ----
+const galleryGrid = document.getElementById('gallery-grid');
+if (galleryGrid) {
+  const MAX_PHOTOS = 24;
+  for (let i = 1; i <= MAX_PHOTOS; i++) {
+    const img = new Image();
+    img.src = `assets/gallery/${i}.jpg`;
+    img.alt = 'Դավիթ ու Մարիամ';
+    img.loading = 'lazy';
+    img.onload = () => {
+      const fig = document.createElement('figure');
+      fig.appendChild(img);
+      galleryGrid.appendChild(fig);
+    };
+  }
+}
+
+// ---- Background music toggle ----
+const music = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-toggle');
+if (music && musicBtn) {
+  musicBtn.addEventListener('click', () => {
+    if (music.paused) {
+      music.play().catch(() => {});
+      musicBtn.classList.add('playing');
+      musicBtn.textContent = '🎶';
+    } else {
+      music.pause();
+      musicBtn.classList.remove('playing');
+      musicBtn.textContent = '🎵';
+    }
   });
 }
