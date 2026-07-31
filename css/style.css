@@ -261,63 +261,65 @@ body.locked { overflow: hidden; height: 100%; }
   letter-spacing: .1em;
 }
 
-/* PROGRAM: ceremony + reception cards (glass, on photo) */
-.detail-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.2rem;
-  max-width: 720px;
-  margin: 0 auto 2rem;
+/* PROGRAM: ceremony -> reception route */
+.route {
+  position: relative;
+  max-width: 380px;
+  margin: 0 auto;
+  padding-left: 2.2rem;
 }
-.detail-card {
-  text-align: center;
-  padding: 1.8rem 1.3rem;
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 16px;
+.route-line {
+  position: absolute;
+  left: 11px;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gold-light), rgba(255,255,255,.3));
+}
+.route-stop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1.4rem 0;
+  text-align: left;
+}
+.route-dot {
+  position: absolute;
+  left: -2.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  box-shadow: 0 0 0 4px rgba(250,248,241,.15);
+}
+.route-thumb {
+  flex: none;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,.5);
+  display: block;
   background: rgba(255,255,255,.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: var(--cream);
 }
-.detail-icon { font-size: 2rem; margin-bottom: .5rem; }
-.detail-card h3 { font-size: 1.1rem; margin-bottom: .4rem; color: #fff; }
-.detail-time {
-  color: var(--gold-light);
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: .3rem;
-}
-.detail-place { font-weight: 500; }
-.detail-address { color: rgba(255,255,255,.75); font-size: .9rem; margin-bottom: .8rem; }
-.map-link {
+.route-thumb img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); display: block; }
+.route-thumb.route-thumb-empty { display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+.route-thumb.route-thumb-empty::after { content: "📍"; }
+.route-thumb.route-thumb-empty img { display: none; }
+.route-title { font-family: 'Noto Serif Armenian', serif; font-size: 1.15rem; color: #fff; }
+.route-time { color: var(--gold-light); font-weight: 600; margin-top: .1rem; }
+.route-place { color: rgba(255,255,255,.8); font-size: .9rem; margin-top: .1rem; }
+.route-link {
+  display: inline-block;
+  margin-top: .4rem;
   font-size: .85rem;
   color: var(--gold-light);
   border-bottom: 1px solid var(--gold-light);
-  padding-bottom: 2px;
+  padding-bottom: 1px;
 }
-
-.tl-divider {
-  width: 60px;
-  height: 1px;
-  background: rgba(255,255,255,.3);
-  margin: 0 auto 1.6rem;
-}
-
-/* TIMELINE (inside photo panel) */
-.tl-list { list-style: none; max-width: 420px; margin: 0 auto; }
-.tl-list li {
-  display: flex;
-  gap: 1.2rem;
-  padding: .9rem 0;
-  border-bottom: 1px dashed rgba(255,255,255,.25);
-}
-.tl-time {
-  min-width: 60px;
-  font-weight: 700;
-  color: var(--gold-light);
-  font-family: 'Noto Serif Armenian', serif;
-}
-.tl-event { color: rgba(255,255,255,.9); text-align: left; }
 
 /* DRESS CODE */
 .dresscode { padding: 3.5rem 1.5rem; text-align: center; background: #fff; }
