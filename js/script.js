@@ -48,6 +48,25 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach((el) => observer.observe(el));
 
+// ---- Program route: reveal stop -> arrow -> stop, in sequence ----
+const routeEl = document.querySelector('.route');
+if (routeEl) {
+  const stop1 = document.getElementById('stop-1');
+  const arrow = document.getElementById('route-arrow');
+  const stop2 = document.getElementById('stop-2');
+
+  const routeObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      stop1.classList.add('visible');
+      setTimeout(() => arrow.classList.add('visible'), 500);
+      setTimeout(() => stop2.classList.add('visible'), 1500);
+      routeObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.25 });
+  routeObserver.observe(routeEl);
+}
+
 // ============ INTRO SEAL + BACKGROUND MUSIC (YouTube) ============
 const YT_VIDEO_ID = 'MqazV4hbu8E';
 

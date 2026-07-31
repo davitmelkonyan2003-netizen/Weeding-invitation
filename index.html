@@ -59,51 +59,48 @@
 
   <!-- COUNTDOWN -->
   <section class="countdown-section">
-    <p class="section-label">Մինչև մեր հարսանիքը մնացել է</p>
+    <p class="section-label">Հարսանիքին մնաց</p>
     <div class="countdown" id="countdown">
       <div class="cd-box"><span id="cd-days">00</span><small>օր</small></div>
       <div class="cd-box"><span id="cd-hours">00</span><small>ժամ</small></div>
       <div class="cd-box"><span id="cd-min">00</span><small>րոպե</small></div>
       <div class="cd-box"><span id="cd-sec">00</span><small>վրկ</small></div>
     </div>
+    <p class="invite-heading">Սիրով սպասում ենք</p>
+    <p class="invite-text">
+      Սիրելի՛ ընկերներ և բարեկամներ,<br>
+      Սրտանց հրավիրում ենք Ձեզ մեզ հետ միասին տոնելու մեր կյանքի ամենակարևոր և գեղեցիկ օրը՝ մեր հարսանիքը:
+    </p>
   </section>
 
-  <!-- PROGRAM: ceremony -> reception, simple route -->
-  <section class="panel photo-panel reveal" id="program" style="background-image:url('assets/photos/3.jpg')">
-    <div class="panel-overlay panel-overlay-strong"></div>
-    <div class="panel-content panel-content-wide">
-      <p class="section-label light">Օրվա ծրագիրը</p>
+  <!-- PROGRAM: ceremony -> reception, photo route -->
+  <section class="program reveal" id="program">
+    <p class="section-label">Օրվա ծրագիրը</p>
 
-      <div class="route">
-        <div class="route-line"></div>
+    <div class="route">
+      <div class="route-stop" id="stop-1">
+        <a class="route-photo" href="https://maps.google.com/?q=Goshavank" target="_blank" rel="noopener">
+          <img src="assets/photos/goshavank.jpg" alt="Գոշավանք" loading="lazy">
+        </a>
+        <p class="route-time">15:30</p>
+        <p class="route-title">Պսակադրություն</p>
+        <p class="route-place">Գոշավանք</p>
+        <a class="route-link" href="https://maps.google.com/?q=Goshavank" target="_blank" rel="noopener">Քարտեզ</a>
+      </div>
 
-        <div class="route-stop">
-          <span class="route-dot"></span>
-          <a class="route-thumb" href="https://maps.google.com/?q=Goshavank" target="_blank" rel="noopener">
-            <img src="assets/photos/goshavank.jpg" alt="Գոշավանք" loading="lazy"
-                 onerror="this.parentElement.classList.add('route-thumb-empty')">
-          </a>
-          <div class="route-info">
-            <p class="route-title">Պսակադրություն</p>
-            <p class="route-time">15:30</p>
-            <p class="route-place">Գոշավանք</p>
-            <a class="route-link" href="https://maps.google.com/?q=Goshavank" target="_blank" rel="noopener">Տեսնել ուղղությունը →</a>
-          </div>
-        </div>
+      <svg class="route-arrow" id="route-arrow" viewBox="0 0 100 170" aria-hidden="true">
+        <path class="route-arrow-path" d="M50,6 C18,32 84,54 50,80 C20,104 82,122 50,148" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path class="route-arrow-head" d="M50,148 L41,135 M50,148 L61,138" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
 
-        <div class="route-stop">
-          <span class="route-dot"></span>
-          <a class="route-thumb" href="https://maps.google.com/?q=Andranik+3rd+lane+Dilijan" target="_blank" rel="noopener">
-            <img src="assets/photos/hovergarden.jpg" alt="Hover Garden" loading="lazy"
-                 onerror="this.parentElement.classList.add('route-thumb-empty')">
-          </a>
-          <div class="route-info">
-            <p class="route-title">Հանդիսություն</p>
-            <p class="route-time">17:00</p>
-            <p class="route-place">Hover Garden, Դիլիջան</p>
-            <a class="route-link" href="https://maps.google.com/?q=Andranik+3rd+lane+Dilijan" target="_blank" rel="noopener">Տեսնել ուղղությունը →</a>
-          </div>
-        </div>
+      <div class="route-stop" id="stop-2">
+        <a class="route-photo" href="https://maps.google.com/?q=Andranik+3rd+lane+Dilijan" target="_blank" rel="noopener">
+          <img src="assets/photos/hovergarden.jpg" alt="Hover Garden" loading="lazy">
+        </a>
+        <p class="route-time">17:00</p>
+        <p class="route-title">Հանդիսություն</p>
+        <p class="route-place">Hover Garden, Դիլիջան</p>
+        <a class="route-link" href="https://maps.google.com/?q=Andranik+3rd+lane+Dilijan" target="_blank" rel="noopener">Քարտեզ</a>
       </div>
     </div>
   </section>
