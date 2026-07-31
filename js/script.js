@@ -48,44 +48,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach((el) => observer.observe(el));
 
-// ---- RSVP form (no backend: opens an email with the answers pre-filled) ----
-const RSVP_EMAIL = 'davitmelkonyan2003@gmail.com'; // TODO: փոխարինել իրական էլ. հասցեով
-
-const rsvpForm = document.getElementById('rsvp-form');
-if (rsvpForm) {
-  rsvpForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('rsvp-name').value.trim();
-    const guests = document.getElementById('rsvp-guests').value.trim();
-    const attend = rsvpForm.querySelector('input[name="attend"]:checked').value;
-    const message = document.getElementById('rsvp-msg').value.trim();
-
-    const subject = encodeURIComponent(`RSVP՝ ${name}`);
-    const body = encodeURIComponent(
-      `Անուն. ${name}\nՀյուրերի քանակ. ${guests}\nՄասնակցություն. ${attend}\nՈւղերձ. ${message || '-'}`
-    );
-
-    window.location.href = `mailto:${RSVP_EMAIL}?subject=${subject}&body=${body}`;
-  });
-}
-
-// ---- Gallery: auto-loads assets/photos/1.jpg, 2.jpg, ... and skips missing ones ----
-const galleryGrid = document.getElementById('gallery-grid');
-if (galleryGrid) {
-  const MAX_PHOTOS = 30;
-  for (let i = 1; i <= MAX_PHOTOS; i++) {
-    const img = new Image();
-    img.src = `assets/photos/${i}.jpg`;
-    img.alt = 'Դավիթ ու Մարիամ';
-    img.loading = 'lazy';
-    img.onload = () => {
-      const fig = document.createElement('figure');
-      fig.appendChild(img);
-      galleryGrid.appendChild(fig);
-    };
-  }
-}
-
 // ============ INTRO SEAL + BACKGROUND MUSIC (YouTube) ============
 const YT_VIDEO_ID = 'MqazV4hbu8E';
 

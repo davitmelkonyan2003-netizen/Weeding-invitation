@@ -75,29 +75,45 @@ a { text-decoration: none; color: inherit; }
   transition: opacity .5s ease, transform .5s ease;
 }
 .seal {
-  width: 120px;
-  height: 120px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
-  border: 2px solid var(--cream);
-  background: radial-gradient(circle at 35% 30%, #b5b374, var(--gold-dark) 70%);
-  color: var(--cream);
-  font-family: 'Noto Serif Armenian', serif;
-  font-size: 1.6rem;
-  letter-spacing: .05em;
+  border: none;
+  background: radial-gradient(circle at 32% 28%, #b8b06a 0%, #8f823f 55%, #6e622e 100%);
   cursor: pointer;
-  box-shadow: 0 8px 30px rgba(0,0,0,.35), inset 0 0 0 6px rgba(250,248,241,.15);
+  box-shadow: 0 10px 34px rgba(0,0,0,.4), inset 0 0 0 3px rgba(250,248,241,.18), inset 0 -6px 10px rgba(0,0,0,.25);
   position: relative;
   transition: transform .4s cubic-bezier(.65,0,.35,1), opacity .4s ease;
   animation: seal-pulse 2.4s ease-in-out infinite;
 }
+.seal::before,
+.seal::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: inherit;
+  box-shadow: inset 0 -4px 8px rgba(0,0,0,.2);
+}
+.seal::before { width: 16px; height: 14px; left: 14px; bottom: -6px; }
+.seal::after { width: 12px; height: 11px; right: 20px; bottom: -8px; }
 .seal-ring {
   position: absolute;
-  inset: -10px;
+  inset: 10px;
   border-radius: 50%;
-  border: 1px solid rgba(250,248,241,.4);
+  border: 1px solid rgba(250,248,241,.55);
+  pointer-events: none;
 }
-.seal-mono { position: relative; }
-.seal-amp { font-style: italic; padding: 0 .2rem; opacity: .85; }
+.seal-emblem {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--cream);
+  opacity: .95;
+}
+.seal-leaves { opacity: .85; }
+.seal-heart { opacity: .95; }
+.seal-flourish { opacity: .8; }
 .intro-hint {
   color: var(--cream);
   font-size: .85rem;
@@ -147,6 +163,7 @@ body.locked { overflow: hidden; height: 100%; }
   max-width: 640px;
   color: var(--cream);
 }
+.panel-content-wide { max-width: 760px; width: 100%; }
 
 /* zoom+fade reveal for photo panels */
 .photo-panel.reveal {
@@ -244,52 +261,46 @@ body.locked { overflow: hidden; height: 100%; }
   letter-spacing: .1em;
 }
 
-/* STORY (inside photo panel) */
-.story-text {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  color: rgba(255,255,255,.92);
-}
-
-/* DETAILS */
-.details { padding: 4rem 1.5rem; background: #fff; }
+/* PROGRAM: ceremony + reception cards (glass, on photo) */
 .detail-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  max-width: 800px;
-  margin: 0 auto 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  max-width: 720px;
+  margin: 0 auto 2rem;
 }
 .detail-card {
   text-align: center;
-  padding: 2rem 1.5rem;
-  border: 1px solid var(--cream-dark);
+  padding: 1.8rem 1.3rem;
+  border: 1px solid rgba(255,255,255,.25);
   border-radius: 16px;
-  background: var(--cream);
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--cream);
 }
 .detail-icon { font-size: 2rem; margin-bottom: .5rem; }
-.detail-card h3 { font-size: 1.15rem; margin-bottom: .4rem; }
+.detail-card h3 { font-size: 1.1rem; margin-bottom: .4rem; color: #fff; }
 .detail-time {
-  color: var(--gold-dark);
+  color: var(--gold-light);
   font-weight: 600;
   font-size: 1.1rem;
   margin-bottom: .3rem;
 }
 .detail-place { font-weight: 500; }
-.detail-address { color: var(--ink-soft); font-size: .9rem; margin-bottom: .8rem; }
+.detail-address { color: rgba(255,255,255,.75); font-size: .9rem; margin-bottom: .8rem; }
 .map-link {
   font-size: .85rem;
-  color: var(--gold-dark);
-  border-bottom: 1px solid var(--gold);
+  color: var(--gold-light);
+  border-bottom: 1px solid var(--gold-light);
   padding-bottom: 2px;
 }
-.map-embed {
-  max-width: 800px;
-  margin: 0 auto;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--cream-dark);
-  filter: grayscale(.15);
+
+.tl-divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(255,255,255,.3);
+  margin: 0 auto 1.6rem;
 }
 
 /* TIMELINE (inside photo panel) */
@@ -309,72 +320,27 @@ body.locked { overflow: hidden; height: 100%; }
 .tl-event { color: rgba(255,255,255,.9); text-align: left; }
 
 /* DRESS CODE */
-.dresscode { padding: 3rem 1.5rem; text-align: center; background: #fff; }
-.dc-text { color: var(--ink-soft); margin-bottom: 1.2rem; }
-.dc-palette { display: flex; justify-content: center; gap: .6rem; }
+.dresscode { padding: 3.5rem 1.5rem; text-align: center; background: #fff; }
+.dc-text { color: var(--ink-soft); margin-bottom: 1.4rem; max-width: 440px; margin-left: auto; margin-right: auto; }
+.dc-palette {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .55rem;
+  max-width: 460px;
+  margin: 0 auto;
+}
 .dc-palette span {
-  width: 34px; height: 34px; border-radius: 50%;
-  border: 1px solid rgba(0,0,0,.06);
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
 }
-
-/* RSVP */
-.rsvp { padding: 4rem 1.5rem; text-align: center; }
-.rsvp-sub { color: var(--ink-soft); margin-bottom: 2rem; }
-.rsvp-form {
-  max-width: 440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  text-align: left;
-}
-.rsvp-form input[type="text"],
-.rsvp-form input[type="number"],
-.rsvp-form textarea {
-  width: 100%;
-  padding: .85rem 1rem;
-  border: 1px solid var(--cream-dark);
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 1rem;
-  background: #fff;
-}
-.rsvp-radio {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-  font-size: .95rem;
+.dc-note {
+  max-width: 460px;
+  margin: 1.4rem auto 0;
   color: var(--ink-soft);
-}
-.rsvp-radio label { display: flex; align-items: center; gap: .5rem; }
-
-/* GALLERY (inside photo panel) */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: .7rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.gallery-grid figure {
-  margin: 0;
-  aspect-ratio: 1 / 1;
-  border-radius: 10px;
-  overflow: hidden;
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.2);
-}
-.gallery-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.gallery-note {
-  text-align: center;
-  color: rgba(255,255,255,.75);
-  margin-top: 1.5rem;
-  font-size: .9rem;
+  font-size: .85rem;
+  line-height: 1.7;
 }
 
 /* MUSIC BUTTON */

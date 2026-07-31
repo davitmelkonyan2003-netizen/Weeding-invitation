@@ -19,7 +19,22 @@
   <div class="intro-center">
     <button id="seal" class="seal" aria-label="Բացել հրավերը">
       <span class="seal-ring"></span>
-      <span class="seal-mono">Դ<span class="seal-amp">&amp;</span>Մ</span>
+      <svg class="seal-emblem" viewBox="0 0 100 100" aria-hidden="true">
+        <g class="seal-leaves" fill="currentColor">
+          <ellipse cx="20" cy="68" rx="5.5" ry="2.3" transform="rotate(-45 20 68)"/>
+          <ellipse cx="16.5" cy="57" rx="6" ry="2.4" transform="rotate(-25 16.5 57)"/>
+          <ellipse cx="15.5" cy="45" rx="6.3" ry="2.5" transform="rotate(-5 15.5 45)"/>
+          <ellipse cx="17.5" cy="34" rx="6" ry="2.4" transform="rotate(15 17.5 34)"/>
+          <ellipse cx="23" cy="25" rx="5.5" ry="2.2" transform="rotate(35 23 25)"/>
+          <ellipse cx="80" cy="68" rx="5.5" ry="2.3" transform="rotate(45 80 68)"/>
+          <ellipse cx="83.5" cy="57" rx="6" ry="2.4" transform="rotate(25 83.5 57)"/>
+          <ellipse cx="84.5" cy="45" rx="6.3" ry="2.5" transform="rotate(5 84.5 45)"/>
+          <ellipse cx="82.5" cy="34" rx="6" ry="2.4" transform="rotate(-15 82.5 34)"/>
+          <ellipse cx="77" cy="25" rx="5.5" ry="2.2" transform="rotate(-35 77 25)"/>
+        </g>
+        <path class="seal-heart" fill="currentColor" d="M50,52 C43,44 31,42 31,30 C31,21 39,16 50,26 C61,16 69,21 69,30 C69,42 57,44 50,52 Z"/>
+        <path class="seal-flourish" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" d="M50,52 C47,58 40,60 35,57 M50,52 C53,58 60,60 65,57"/>
+      </svg>
     </button>
     <p class="intro-hint">Հպվեք՝ բացելու հրավերը</p>
   </div>
@@ -38,7 +53,7 @@
       <h1 class="hero-names">Դավիթ <span class="amp">&amp;</span> Մարիամ</h1>
       <p class="hero-sub">Կիսելու մեզ հետ մեր կյանքի ամենագեղեցիկ օրը</p>
       <div class="hero-date">22.08.2026</div>
-      <a href="#details" class="btn btn-ghost">Մանրամասները ↓</a>
+      <a href="#program" class="btn btn-ghost">Մանրամասները ↓</a>
     </div>
   </header>
 
@@ -53,57 +68,34 @@
     </div>
   </section>
 
-  <!-- STORY -->
-  <section class="panel photo-panel reveal" style="background-image:url('assets/photos/4.jpg')">
-    <div class="panel-overlay"></div>
-    <div class="panel-content">
-      <p class="section-label light">Մեր պատմությունը</p>
-      <p class="story-text">
-        Երկու սիրտ, մեկ ճակատագիր։ Այս գեղեցիկ ուղևորության մեջ Ձեր ներկայությունը մեզ համար
-        ամենամեծ ուրախությունն է։ Խնդրում ենք միանալ մեզ այս անմոռանալի օրը և կիսել մեր
-        երջանկությունը։
-      </p>
-    </div>
-  </section>
+  <!-- PROGRAM: ceremony + reception + schedule, one photo panel -->
+  <section class="panel photo-panel reveal" id="program" style="background-image:url('assets/photos/3.jpg')">
+    <div class="panel-overlay panel-overlay-strong"></div>
+    <div class="panel-content panel-content-wide">
+      <p class="section-label light">Օրվա ծրագիրը</p>
 
-  <!-- DETAILS -->
-  <section class="details" id="details">
-    <p class="section-label">Օրվա ծրագիրը</p>
+      <div class="detail-cards">
+        <div class="detail-card">
+          <div class="detail-icon">💍</div>
+          <h3>Պսակադրության արարողություն</h3>
+          <p class="detail-time">15:30</p>
+          <p class="detail-place">Գոշավանք</p>
+          <p class="detail-address">գ. Գոշ, Տավուշի մարզ</p>
+          <a class="map-link" href="https://maps.google.com/?q=Goshavank" target="_blank" rel="noopener">Տեսնել քարտեզի վրա</a>
+        </div>
 
-    <div class="detail-cards">
-      <div class="detail-card reveal">
-        <div class="detail-icon">💍</div>
-        <h3>Պսակադրության արարողություն</h3>
-        <p class="detail-time">15:30</p>
-        <p class="detail-place">Գոշավանք</p>
-        <p class="detail-address">գ. Գոշ, Տավուշի մարզ</p>
-        <a class="map-link" href="https://maps.google.com/?q=Goshavank" target="_blank" rel="noopener">Տեսնել քարտեզի վրա</a>
+        <div class="detail-card">
+          <div class="detail-icon">🥂</div>
+          <h3>Հարսանյաց հանդիսություն</h3>
+          <p class="detail-time">17:00</p>
+          <p class="detail-place">Hover Garden</p>
+          <p class="detail-address">Անդրանիկի 3-րդ նրբանցք, Դիլիջան</p>
+          <a class="map-link" href="https://maps.google.com/?q=Andranik+3rd+lane+Dilijan" target="_blank" rel="noopener">Տեսնել քարտեզի վրա</a>
+        </div>
       </div>
 
-      <div class="detail-card reveal">
-        <div class="detail-icon">🥂</div>
-        <h3>Հարսանյաց հանդիսություն</h3>
-        <p class="detail-time">17:00</p>
-        <p class="detail-place">Hover Garden</p>
-        <p class="detail-address">Անդրանիկի 3-րդ նրբանցք, Դիլիջան</p>
-        <a class="map-link" href="https://maps.google.com/?q=Andranik+3rd+lane+Dilijan" target="_blank" rel="noopener">Տեսնել քարտեզի վրա</a>
-      </div>
-    </div>
+      <div class="tl-divider"></div>
 
-    <div class="map-embed reveal">
-      <iframe
-        title="Հասցե"
-        src="https://maps.google.com/maps?q=Andranik+3rd+lane+Dilijan&t=&z=14&ie=UTF8&iwloc=&output=embed"
-        width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy">
-      </iframe>
-    </div>
-  </section>
-
-  <!-- TIMELINE -->
-  <section class="panel photo-panel reveal" style="background-image:url('assets/photos/3.jpg')">
-    <div class="panel-overlay"></div>
-    <div class="panel-content">
-      <p class="section-label light">Ժամանակացույց</p>
       <ul class="tl-list">
         <li><span class="tl-time">15:00</span><span class="tl-event">Հյուրերի հավաքույթ Գոշավանքում</span></li>
         <li><span class="tl-time">15:30</span><span class="tl-event">Պսակադրության արարողություն</span></li>
@@ -118,52 +110,36 @@
   <!-- DRESS CODE -->
   <section class="dresscode reveal">
     <p class="section-label">Dress Code</p>
-    <p class="dc-text">Կխնդրեինք խուսափել սպիտակից՝ հարգելով հարսի զգեստը 🤍</p>
+    <p class="dc-text">Խնդրում ենք ընտրել այս նուրբ, մեղմ երանգներից՝ որը մասին Ձեզ ավելի սազում է</p>
     <div class="dc-palette">
-      <span style="background:#99975c"></span>
-      <span style="background:#e6e2c9"></span>
-      <span style="background:#7c8b6f"></span>
-      <span style="background:#3f4a3a"></span>
-      <span style="background:#5a4632"></span>
+      <span style="background:#d98a8a" title="վարդագույն"></span>
+      <span style="background:#f0b8b8" title="բաց վարդագույն"></span>
+      <span style="background:#c98fa0" title="մոուվ"></span>
+      <span style="background:#c9b8e0" title="բաց մանուշակագույն"></span>
+      <span style="background:#9fae94" title="մուգ կանաչ"></span>
+      <span style="background:#a8d9c5" title="մինթ կանաչ"></span>
+      <span style="background:#a3a068" title="բաց օլիվկանաչ"></span>
+      <span style="background:#b7c9a8" title="ձիթապտղագույն"></span>
+      <span style="background:#f0c14b" title="կրեմի դեղին"></span>
+      <span style="background:#f4d76b" title="նարգիզագույն դեղին"></span>
+      <span style="background:#7f97ab" title="մոխրագույն կապույտ"></span>
+      <span style="background:#a8c8e0" title="երկնագույն"></span>
+      <span style="background:#c3c3ea" title="բաց լավանդագույն"></span>
+      <span style="background:#b3a8d9" title="մանուշակ+կապույտ"></span>
+      <span style="background:#7a2e3a" title="բորդո"></span>
+      <span style="background:#9c4f63" title="փլամ"></span>
+      <span style="background:#b08e68" title="մեղրի շագանակագույն"></span>
+      <span style="background:#d4704a" title="թերակոտա"></span>
     </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="panel photo-panel reveal" id="gallery" style="background-image:url('assets/photos/5.jpg')">
-    <div class="panel-overlay panel-overlay-strong"></div>
-    <div class="panel-content">
-      <p class="section-label light">Մեր լուսանկարները</p>
-      <div class="gallery-grid" id="gallery-grid"></div>
-      <p class="gallery-note">Շուտով ավելի շատ նկարներ 📸</p>
-    </div>
-  </section>
-
-  <!-- RSVP -->
-  <section class="rsvp reveal" id="rsvp">
-    <p class="section-label">Հաստատեք Ձեր մասնակցությունը</p>
-    <p class="rsvp-sub">Խնդրում ենք հրավերը ստանալուց հետո 1 օրվա ընթացքում պատասխանել՝ նշելով հյուրերի քանակը</p>
-
-    <form id="rsvp-form" class="rsvp-form">
-      <input type="text" id="rsvp-name" name="name" placeholder="Անուն Ազգանուն" required>
-      <input type="number" id="rsvp-guests" name="guests" min="1" max="10" placeholder="Հյուրերի քանակ" required>
-
-      <div class="rsvp-radio">
-        <label><input type="radio" name="attend" value="Այո, կմասնակցեմ" checked> Այո, կմասնակցեմ 🎉</label>
-        <label><input type="radio" name="attend" value="Ցավոք, չեմ կարող"> Ցավոք, չեմ կարող</label>
-      </div>
-
-      <textarea id="rsvp-msg" name="message" rows="3" placeholder="Ցանկություն նորապսակների համար (ոչ պարտադիր)"></textarea>
-
-      <button type="submit" class="btn btn-solid">Ուղարկել հաստատում</button>
-    </form>
+    <p class="dc-note">Խնդրում ենք խուսափել սպիտակից, մանգոյի/մանանեխի գույնից, շատ բաց վառ, ինչպես նաև շատ մուգ ու խամրած երանգներից</p>
   </section>
 
   <!-- FOOTER -->
-  <footer class="panel photo-panel" style="background-image:url('assets/photos/1.jpg')">
+  <footer class="panel photo-panel" style="background-image:url('assets/photos/4.jpg')">
     <div class="panel-overlay"></div>
     <div class="panel-content">
       <p class="footer-names">Դավիթ <span class="amp">&amp;</span> Մարիամ</p>
-      <p class="footer-thanks">Ձեր ներկայությունը մեզ համար ամենամեծ նվերն է 💛<br>Սիրով սպասում ենք Ձեզ 💍</p>
+      <p class="footer-thanks">Սիրով սպասում ենք Ձեզ</p>
     </div>
   </footer>
 
