@@ -12,134 +12,162 @@
 </head>
 <body>
 
-<div class="petals" aria-hidden="true"></div>
+<!-- INTRO / SEAL -->
+<div id="intro" class="intro">
+  <div class="intro-panel intro-panel-left"></div>
+  <div class="intro-panel intro-panel-right"></div>
+  <div class="intro-center">
+    <button id="seal" class="seal" aria-label="Բացել հրավերը">
+      <span class="seal-ring"></span>
+      <span class="seal-mono">Դ<span class="seal-amp">&amp;</span>Մ</span>
+    </button>
+    <p class="intro-hint">Հպվեք՝ բացելու հրավերը</p>
+  </div>
+</div>
 
+<div id="yt-player" class="yt-player" aria-hidden="true"></div>
 <button id="music-toggle" class="music-btn" aria-label="Երաժշտություն" title="Երաժշտություն">🎵</button>
-<audio id="bg-music" src="assets/music.mp3" loop preload="none"></audio>
 
-<!-- HERO -->
-<header class="hero" id="hero">
-  <div class="hero-frame">
-    <p class="hero-kicker">Հրավիրում ենք Ձեզ</p>
-    <h1 class="hero-names">Դավիթ <span class="amp">&amp;</span> Մարիամ</h1>
-    <p class="hero-sub">Կիսելու մեզ հետ մեր կյանքի ամենագեղեցիկ օրը</p>
-    <div class="hero-date">22.08.2026</div>
-    <a href="#details" class="btn btn-ghost">Մանրամասները ↓</a>
-  </div>
-</header>
+<main id="site" class="site">
 
-<!-- COUNTDOWN -->
-<section class="countdown-section">
-  <p class="section-label">Մինչև մեր հարսանիքը մնացել է</p>
-  <div class="countdown" id="countdown">
-    <div class="cd-box"><span id="cd-days">00</span><small>օր</small></div>
-    <div class="cd-box"><span id="cd-hours">00</span><small>ժամ</small></div>
-    <div class="cd-box"><span id="cd-min">00</span><small>րոպե</small></div>
-    <div class="cd-box"><span id="cd-sec">00</span><small>վրկ</small></div>
-  </div>
-</section>
+  <!-- HERO -->
+  <header class="panel photo-panel" id="hero" style="background-image:url('assets/photos/2.jpg')">
+    <div class="panel-overlay"></div>
+    <div class="hero-frame">
+      <p class="hero-kicker">Հրավիրում ենք Ձեզ</p>
+      <h1 class="hero-names">Դավիթ <span class="amp">&amp;</span> Մարիամ</h1>
+      <p class="hero-sub">Կիսելու մեզ հետ մեր կյանքի ամենագեղեցիկ օրը</p>
+      <div class="hero-date">22.08.2026</div>
+      <a href="#details" class="btn btn-ghost">Մանրամասները ↓</a>
+    </div>
+  </header>
 
-<!-- STORY -->
-<section class="story reveal">
-  <p class="section-label">Մեր պատմությունը</p>
-  <p class="story-text">
-    Երկու սիրտ, մեկ ճակատագիր։ Այս գեղեցիկ ուղևորության մեջ Ձեր ներկայությունը մեզ համար
-    ամենամեծ ուրախությունն է։ Խնդրում ենք միանալ մեզ այս անմոռանալի օրը և կիսել մեր
-    երջանկությունը։
-  </p>
-</section>
+  <!-- COUNTDOWN -->
+  <section class="countdown-section">
+    <p class="section-label">Մինչև մեր հարսանիքը մնացել է</p>
+    <div class="countdown" id="countdown">
+      <div class="cd-box"><span id="cd-days">00</span><small>օր</small></div>
+      <div class="cd-box"><span id="cd-hours">00</span><small>ժամ</small></div>
+      <div class="cd-box"><span id="cd-min">00</span><small>րոպե</small></div>
+      <div class="cd-box"><span id="cd-sec">00</span><small>վրկ</small></div>
+    </div>
+  </section>
 
-<!-- DETAILS -->
-<section class="details" id="details">
-  <p class="section-label">Օրվա ծրագիրը</p>
+  <!-- STORY -->
+  <section class="panel photo-panel reveal" style="background-image:url('assets/photos/4.jpg')">
+    <div class="panel-overlay"></div>
+    <div class="panel-content">
+      <p class="section-label light">Մեր պատմությունը</p>
+      <p class="story-text">
+        Երկու սիրտ, մեկ ճակատագիր։ Այս գեղեցիկ ուղևորության մեջ Ձեր ներկայությունը մեզ համար
+        ամենամեծ ուրախությունն է։ Խնդրում ենք միանալ մեզ այս անմոռանալի օրը և կիսել մեր
+        երջանկությունը։
+      </p>
+    </div>
+  </section>
 
-  <div class="detail-cards">
-    <div class="detail-card reveal">
-      <div class="detail-icon">💍</div>
-      <h3>Պսակադրության արարողություն</h3>
-      <p class="detail-time">15:30</p>
-      <p class="detail-place">Գոշավանք</p>
-      <p class="detail-address">գ. Գոշ, Տավուշի մարզ</p>
-      <a class="map-link" href="https://maps.google.com/?q=Goshavank" target="_blank" rel="noopener">Տեսնել քարտեզի վրա</a>
+  <!-- DETAILS -->
+  <section class="details" id="details">
+    <p class="section-label">Օրվա ծրագիրը</p>
+
+    <div class="detail-cards">
+      <div class="detail-card reveal">
+        <div class="detail-icon">💍</div>
+        <h3>Պսակադրության արարողություն</h3>
+        <p class="detail-time">15:30</p>
+        <p class="detail-place">Գոշավանք</p>
+        <p class="detail-address">գ. Գոշ, Տավուշի մարզ</p>
+        <a class="map-link" href="https://maps.google.com/?q=Goshavank" target="_blank" rel="noopener">Տեսնել քարտեզի վրա</a>
+      </div>
+
+      <div class="detail-card reveal">
+        <div class="detail-icon">🥂</div>
+        <h3>Հարսանյաց հանդիսություն</h3>
+        <p class="detail-time">17:00</p>
+        <p class="detail-place">Hover Garden</p>
+        <p class="detail-address">Անդրանիկի 3-րդ նրբանցք, Դիլիջան</p>
+        <a class="map-link" href="https://maps.google.com/?q=Andranik+3rd+lane+Dilijan" target="_blank" rel="noopener">Տեսնել քարտեզի վրա</a>
+      </div>
     </div>
 
-    <div class="detail-card reveal">
-      <div class="detail-icon">🥂</div>
-      <h3>Հարսանյաց հանդիսություն</h3>
-      <p class="detail-time">17:00</p>
-      <p class="detail-place">Hover Garden</p>
-      <p class="detail-address">Անդրանիկի 3-րդ նրբանցք, Դիլիջան</p>
-      <a class="map-link" href="https://maps.google.com/?q=Andranik+3rd+lane+Dilijan" target="_blank" rel="noopener">Տեսնել քարտեզի վրա</a>
+    <div class="map-embed reveal">
+      <iframe
+        title="Հասցե"
+        src="https://maps.google.com/maps?q=Andranik+3rd+lane+Dilijan&t=&z=14&ie=UTF8&iwloc=&output=embed"
+        width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
     </div>
-  </div>
+  </section>
 
-  <div class="map-embed reveal">
-    <iframe
-      title="Հասցե"
-      src="https://maps.google.com/maps?q=Andranik+3rd+lane+Dilijan&t=&z=14&ie=UTF8&iwloc=&output=embed"
-      width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
-  </div>
-</section>
-
-<!-- TIMELINE -->
-<section class="timeline reveal">
-  <p class="section-label">Ժամանակացույց</p>
-  <ul class="tl-list">
-    <li><span class="tl-time">15:00</span><span class="tl-event">Հյուրերի հավաքույթ Գոշավանքում</span></li>
-    <li><span class="tl-time">15:30</span><span class="tl-event">Պսակադրության արարողություն</span></li>
-    <li><span class="tl-time">16:15</span><span class="tl-event">Ընդհանուր լուսանկարներ</span></li>
-    <li><span class="tl-time">17:00</span><span class="tl-event">Հարսանյաց հանդիսություն՝ Hover Garden, Դիլիջան</span></li>
-    <li><span class="tl-time">18:00</span><span class="tl-event">Ընթրիք և պար</span></li>
-    <li><span class="tl-time">00:00</span><span class="tl-event">Տոնի ավարտ</span></li>
-  </ul>
-</section>
-
-<!-- DRESS CODE -->
-<section class="dresscode reveal">
-  <p class="section-label">Dress Code</p>
-  <p class="dc-text">Կխնդրեինք խուսափել սպիտակից՝ հարգելով հարսի զգեստը 🤍</p>
-  <div class="dc-palette">
-    <span style="background:#c9a15a"></span>
-    <span style="background:#e6d5c3"></span>
-    <span style="background:#7c8b6f"></span>
-    <span style="background:#3f4a3a"></span>
-    <span style="background:#8a3b3b"></span>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="gallery reveal" id="gallery">
-  <p class="section-label">Մեր լուսանկարները</p>
-  <div class="gallery-grid" id="gallery-grid"></div>
-  <p class="gallery-note">Շուտով ավելի շատ նկարներ 📸</p>
-</section>
-
-<!-- RSVP -->
-<section class="rsvp reveal" id="rsvp">
-  <p class="section-label">Հաստատեք Ձեր մասնակցությունը</p>
-  <p class="rsvp-sub">Խնդրում ենք հրավերը ստանալուց հետո 1 օրվա ընթացքում պատասխանել՝ նշելով հյուրերի քանակը</p>
-
-  <form id="rsvp-form" class="rsvp-form">
-    <input type="text" id="rsvp-name" name="name" placeholder="Անուն Ազգանուն" required>
-    <input type="number" id="rsvp-guests" name="guests" min="1" max="10" placeholder="Հյուրերի քանակ" required>
-
-    <div class="rsvp-radio">
-      <label><input type="radio" name="attend" value="Այո, կմասնակցեմ" checked> Այո, կմասնակցեմ 🎉</label>
-      <label><input type="radio" name="attend" value="Ցավոք, չեմ կարող"> Ցավոք, չեմ կարող</label>
+  <!-- TIMELINE -->
+  <section class="panel photo-panel reveal" style="background-image:url('assets/photos/3.jpg')">
+    <div class="panel-overlay"></div>
+    <div class="panel-content">
+      <p class="section-label light">Ժամանակացույց</p>
+      <ul class="tl-list">
+        <li><span class="tl-time">15:00</span><span class="tl-event">Հյուրերի հավաքույթ Գոշավանքում</span></li>
+        <li><span class="tl-time">15:30</span><span class="tl-event">Պսակադրության արարողություն</span></li>
+        <li><span class="tl-time">16:15</span><span class="tl-event">Ընդհանուր լուսանկարներ</span></li>
+        <li><span class="tl-time">17:00</span><span class="tl-event">Հարսանյաց հանդիսություն՝ Hover Garden, Դիլիջան</span></li>
+        <li><span class="tl-time">18:00</span><span class="tl-event">Ընթրիք և պար</span></li>
+        <li><span class="tl-time">00:00</span><span class="tl-event">Տոնի ավարտ</span></li>
+      </ul>
     </div>
+  </section>
 
-    <textarea id="rsvp-msg" name="message" rows="3" placeholder="Ցանկություն նորապսակների համար (ոչ պարտադիր)"></textarea>
+  <!-- DRESS CODE -->
+  <section class="dresscode reveal">
+    <p class="section-label">Dress Code</p>
+    <p class="dc-text">Կխնդրեինք խուսափել սպիտակից՝ հարգելով հարսի զգեստը 🤍</p>
+    <div class="dc-palette">
+      <span style="background:#99975c"></span>
+      <span style="background:#e6e2c9"></span>
+      <span style="background:#7c8b6f"></span>
+      <span style="background:#3f4a3a"></span>
+      <span style="background:#5a4632"></span>
+    </div>
+  </section>
 
-    <button type="submit" class="btn btn-solid">Ուղարկել հաստատում</button>
-  </form>
-</section>
+  <!-- GALLERY -->
+  <section class="panel photo-panel reveal" id="gallery" style="background-image:url('assets/photos/5.jpg')">
+    <div class="panel-overlay panel-overlay-strong"></div>
+    <div class="panel-content">
+      <p class="section-label light">Մեր լուսանկարները</p>
+      <div class="gallery-grid" id="gallery-grid"></div>
+      <p class="gallery-note">Շուտով ավելի շատ նկարներ 📸</p>
+    </div>
+  </section>
 
-<!-- FOOTER -->
-<footer class="footer reveal">
-  <p class="footer-names">Դավիթ <span class="amp">&amp;</span> Մարիամ</p>
-  <p class="footer-thanks">Ձեր ներկայությունը մեզ համար ամենամեծ նվերն է 💛<br>Սիրով սպասում ենք Ձեզ 💍</p>
-</footer>
+  <!-- RSVP -->
+  <section class="rsvp reveal" id="rsvp">
+    <p class="section-label">Հաստատեք Ձեր մասնակցությունը</p>
+    <p class="rsvp-sub">Խնդրում ենք հրավերը ստանալուց հետո 1 օրվա ընթացքում պատասխանել՝ նշելով հյուրերի քանակը</p>
+
+    <form id="rsvp-form" class="rsvp-form">
+      <input type="text" id="rsvp-name" name="name" placeholder="Անուն Ազգանուն" required>
+      <input type="number" id="rsvp-guests" name="guests" min="1" max="10" placeholder="Հյուրերի քանակ" required>
+
+      <div class="rsvp-radio">
+        <label><input type="radio" name="attend" value="Այո, կմասնակցեմ" checked> Այո, կմասնակցեմ 🎉</label>
+        <label><input type="radio" name="attend" value="Ցավոք, չեմ կարող"> Ցավոք, չեմ կարող</label>
+      </div>
+
+      <textarea id="rsvp-msg" name="message" rows="3" placeholder="Ցանկություն նորապսակների համար (ոչ պարտադիր)"></textarea>
+
+      <button type="submit" class="btn btn-solid">Ուղարկել հաստատում</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="panel photo-panel" style="background-image:url('assets/photos/1.jpg')">
+    <div class="panel-overlay"></div>
+    <div class="panel-content">
+      <p class="footer-names">Դավիթ <span class="amp">&amp;</span> Մարիամ</p>
+      <p class="footer-thanks">Ձեր ներկայությունը մեզ համար ամենամեծ նվերն է 💛<br>Սիրով սպասում ենք Ձեզ 💍</p>
+    </div>
+  </footer>
+
+</main>
 
 <script src="js/script.js"></script>
 </body>

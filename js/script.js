@@ -69,13 +69,13 @@ if (rsvpForm) {
   });
 }
 
-// ---- Gallery: auto-loads assets/gallery/1.jpg, 2.jpg, ... and skips missing ones ----
+// ---- Gallery: auto-loads assets/photos/1.jpg, 2.jpg, ... and skips missing ones ----
 const galleryGrid = document.getElementById('gallery-grid');
 if (galleryGrid) {
-  const MAX_PHOTOS = 24;
+  const MAX_PHOTOS = 30;
   for (let i = 1; i <= MAX_PHOTOS; i++) {
     const img = new Image();
-    img.src = `assets/gallery/${i}.jpg`;
+    img.src = `assets/photos/${i}.jpg`;
     img.alt = 'Դավիթ ու Մարիամ';
     img.loading = 'lazy';
     img.onload = () => {
@@ -86,19 +86,80 @@ if (galleryGrid) {
   }
 }
 
-// ---- Background music toggle ----
-const music = document.getElementById('bg-music');
-const musicBtn = document.getElementById('music-toggle');
-if (music && musicBtn) {
-  musicBtn.addEventListener('click', () => {
-    if (music.paused) {
-      music.play().catch(() => {});
-      musicBtn.classList.add('playing');
-      musicBtn.textContent = '🎶';
-    } else {
-      music.pause();
-      musicBtn.classList.remove('playing');
-      musicBtn.textContent = '🎵';
-    }
+// ============ INTRO SEAL + BACKGROUND MUSIC (YouTube) ============
+const YT_VIDEO_ID = 'MqazV4hbu8E';
+
+let ytPlayer = null;
+let ytReady = false;
+let playRequested = false;
+
+function loadYouTubeAPI() {
+  const tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+}
+
+window.onYouTubeIframeAPIReady = function () {
+  ytPlayer = new YT.Player('yt-player', {
+    videoId: YT_VIDEO_ID,
+    playerVars: {
+      autoplay: 0,
+      controls: 0,
+      loop: 1,
+      playlist: YT_VIDEO_ID,
+      playsinline: 1,
+    },
+    events: {
+      onReady: () => {
+        ytReady = true;
+        if (playRequested) playMusic();
+      },
+    },
   });
+};
+
+function playMusic() {
+  if (ytReady && ytPlayer) {
+    ytPlayer.playVideo();
+    musicBtn.classList.add('playing');
+    musicBtn.textContent = '🎶';
+  } else {
+    playRequested = true;
+  }
+}
+
+function toggleMusic() {
+  if (!ytReady || !ytPlayer) {
+    playMusic();
+    return;
+  }
+  const state = ytPlayer.getPlayerState();
+  if (state === YT.PlayerState.PLAYING) {
+    ytPlayer.pauseVideo();
+    musicBtn.classList.remove('playing');
+    musicBtn.textContent = '🎵';
+  } else {
+    playMusic();
+  }
+}
+
+const musicBtn = document.getElementById('music-toggle');
+if (musicBtn) {
+  loadYouTubeAPI();
+  musicBtn.addEventListener('click', toggleMusic);
+}
+
+// ---- Intro seal: click to open, then reveal site + start music ----
+const introEl = document.getElementById('intro');
+const sealBtn = document.getElementById('seal');
+if (introEl && sealBtn) {
+  document.body.classList.add('locked');
+  sealBtn.addEventListener('click', () => {
+    introEl.classList.add('opening');
+    playMusic();
+    setTimeout(() => {
+      introEl.classList.add('hidden');
+      document.body.classList.remove('locked');
+    }, 1000);
+  }, { once: true });
 }
