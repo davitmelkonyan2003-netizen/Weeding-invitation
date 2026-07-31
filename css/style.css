@@ -232,7 +232,7 @@ body.locked { overflow: hidden; height: 100%; }
 .btn-solid:hover { background: var(--gold-dark); }
 
 /* COUNTDOWN */
-.countdown-section { padding: 3.5rem 1.5rem; text-align: center; }
+.countdown-section { padding: 3.5rem 1.5rem; }
 .countdown {
   display: flex;
   justify-content: center;
@@ -241,12 +241,12 @@ body.locked { overflow: hidden; height: 100%; }
   margin-bottom: 2.4rem;
 }
 .cd-box {
-  background: #fff;
-  border: 1px solid var(--cream-dark);
+  background: rgba(255,255,255,.95);
+  border: 1px solid rgba(255,255,255,.6);
   border-radius: 12px;
   padding: 1rem 1.2rem;
   min-width: 78px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.04);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
 }
 .cd-box span {
   display: block;
@@ -264,15 +264,16 @@ body.locked { overflow: hidden; height: 100%; }
 .invite-heading {
   font-family: 'Noto Serif Armenian', serif;
   font-size: 1.3rem;
-  color: var(--gold-dark);
+  color: var(--gold-light);
   margin-bottom: .8rem;
 }
 .invite-text {
   max-width: 480px;
   margin: 0 auto;
-  color: var(--ink-soft);
+  color: rgba(255,255,255,.9);
   line-height: 1.9;
   font-size: 1rem;
+  text-shadow: 0 1px 8px rgba(0,0,0,.3);
 }
 
 /* PROGRAM: ceremony -> reception photo route */
@@ -337,8 +338,15 @@ body.locked { overflow: hidden; height: 100%; }
 }
 
 /* DRESS CODE */
-.dresscode { padding: 3.5rem 1.5rem; text-align: center; background: #fff; }
-.dc-text { color: var(--ink-soft); margin-bottom: 1.4rem; max-width: 440px; margin-left: auto; margin-right: auto; }
+.dc-card {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 20px;
+  padding: 2.2rem 1.6rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.dc-text { color: rgba(255,255,255,.9); margin-bottom: 1.4rem; max-width: 440px; margin-left: auto; margin-right: auto; }
 .dc-palette {
   display: flex;
   flex-wrap: wrap;
@@ -349,13 +357,13 @@ body.locked { overflow: hidden; height: 100%; }
 }
 .dc-palette span {
   width: 30px; height: 30px; border-radius: 50%;
-  border: 1px solid rgba(0,0,0,.08);
-  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  border: 1px solid rgba(255,255,255,.4);
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
 }
 .dc-note {
   max-width: 460px;
   margin: 1.4rem auto 0;
-  color: var(--ink-soft);
+  color: rgba(255,255,255,.75);
   font-size: .85rem;
   line-height: 1.7;
 }
