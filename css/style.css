@@ -235,31 +235,39 @@ body.locked { overflow: hidden; height: 100%; }
 .countdown-section { padding: 3.5rem 1.5rem; }
 .countdown {
   display: flex;
+  align-items: flex-start;
   justify-content: center;
-  gap: 1rem;
+  gap: .3rem;
   flex-wrap: wrap;
-  margin-bottom: 2.4rem;
+  margin-bottom: 2.6rem;
 }
-.cd-box {
-  background: rgba(255,255,255,.95);
-  border: 1px solid rgba(255,255,255,.6);
-  border-radius: 12px;
-  padding: 1rem 1.2rem;
-  min-width: 78px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+.cd-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 58px;
 }
-.cd-box span {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--gold-dark);
+.cd-unit span {
   font-family: 'Noto Serif Armenian', serif;
+  font-size: clamp(2.2rem, 8vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
 }
-.cd-box small {
-  font-size: .75rem;
-  color: var(--ink-soft);
+.cd-unit small {
+  margin-top: .5rem;
+  font-size: .7rem;
+  color: var(--gold-light);
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: .15em;
+}
+.cd-sep {
+  font-family: 'Noto Serif Armenian', serif;
+  font-size: clamp(1.8rem, 6vw, 2.2rem);
+  color: rgba(255,255,255,.4);
+  line-height: 1;
+  margin-top: .1rem;
 }
 .invite-heading {
   font-family: 'Noto Serif Armenian', serif;
