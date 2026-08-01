@@ -207,6 +207,13 @@ body.locked { overflow: hidden; height: 100%; }
   color: var(--gold-light);
   font-weight: 600;
 }
+.std-label {
+  font-family: 'Noto Serif Armenian', serif;
+  font-style: italic;
+  font-size: clamp(1.8rem, 7vw, 2.6rem);
+  color: #fff;
+  letter-spacing: .04em;
+}
 
 .btn {
   display: inline-block;
